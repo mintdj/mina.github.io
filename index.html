@@ -260,6 +260,76 @@ footer{
 .contact-info a:hover{
   color:white;
 }  
+
+  /* ===== CERTIFICATIONS SECTION ===== */
+
+#certifications{
+  padding-top:120px;
+}
+
+.cert-container{
+  margin-top:50px;
+  display:grid;
+  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.cert-card{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  padding:35px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  transition:.4s ease;
+  overflow:hidden;
+}
+
+.cert-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, rgba(59,130,246,0.15), transparent);
+  opacity:0;
+  transition:.4s;
+}
+
+.cert-card:hover{
+  transform:translateY(-6px);
+  border-color:#3b82f6;
+}
+
+.cert-card:hover::before{
+  opacity:1;
+}
+
+.cert-badge{
+  min-width:60px;
+  height:60px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:18px;
+  background:linear-gradient(135deg,#3b82f6,#10b981);
+  color:white;
+  box-shadow:0 0 25px rgba(59,130,246,0.3);
+}
+
+.cert-content h3{
+  margin-bottom:8px;
+  font-size:18px;
+}
+
+.cert-content p{
+  color:#94a3b8;
+  font-size:14px;
+}
+  
 </style>
 </head>
 
@@ -319,7 +389,6 @@ footer{
     <p>
       Technical Stack:
     </p>
-    <br/>
     <p>
       💻 Backend: ASP.NET Core, C#, Web API, MVC
     </p>
@@ -363,6 +432,38 @@ footer{
   </div>
 </section>
 
+  <section id="certifications">
+  <h2>Licenses & Certifications</h2>
+
+  <div class="cert-container">
+
+    <div class="cert-card">
+      <div class="cert-badge">WP</div>
+      <div class="cert-content">
+        <h3>WordPress Development</h3>
+        <p>Industrial Management Institute (IMI)</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-badge">C#</div>
+      <div class="cert-content">
+        <h3>C# Programming Language</h3>
+        <p>Industrial Management Institute (IMI)</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-badge">FS</div>
+      <div class="cert-content">
+        <h3>Full-Stack Development</h3>
+        <p>Industrial Management Institute (IMI)</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
 <section id="projects">
   <h2>Selected Projects</h2>
   <div class="grid">
