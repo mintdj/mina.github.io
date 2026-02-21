@@ -1,54 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack Developer | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Full Stack Developer Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0f172a;
+  --bg-secondary: #111827;
+  --primary: #3b82f6;
+  --emerald: #10b981;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --card: #1f2937;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+section {
+  padding: 80px 10%;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+p {
+  color: var(--muted);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+  border-radius: 6px;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #2563eb;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero span {
+  color: var(--primary);
+}
+
+/* TECH STACK */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--primary);
+}
+
+/* TIMELINE */
+.timeline {
+  border-left: 2px solid var(--primary);
+  padding-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+}
+
+.timeline-item h3 {
+  color: var(--primary);
+}
+
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card.ecommerce {
+  border: 1px solid var(--emerald);
+}
+
+.project-card h3 {
+  margin-bottom: 15px;
+}
+
+/* CONTACT */
+.contact-form {
+  max-width: 500px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: none;
+  background: var(--bg-secondary);
+  color: var(--text);
+}
+
+input:focus, textarea:focus {
+  outline: 1px solid var(--primary);
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: var(--bg-secondary);
+  color: var(--muted);
+}
+</style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
 
-    <header class="h-screen flex flex-col justify-center items-center text-center p-5">
-        <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-            Full Stack Developer
-        </h1>
-        <p class="mt-4 text-xl text-slate-400 max-w-2xl">
-            6+ Years of Experience specializing in <span class="text-blue-400">.NET Core</span>, 
-            <span class="text-blue-400">SQL Server</span>, and <span class="text-emerald-400">Multilingual E-commerce</span>.
-        </p>
-        <div class="mt-8 flex gap-4">
-            <a href="#projects" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition">View Work</a>
-            <a href="YOUR_LINKEDIN_URL" class="border border-slate-700 hover:bg-slate-800 px-8 py-3 rounded-full font-bold transition">LinkedIn</a>
-        </div>
-    </header>
+<body>
 
-    <section id="expertise" class="py-20 bg-slate-800/50">
-        <div class="max-w-6xl mx-auto px-5 text-center">
-            <h2 class="text-3xl font-bold mb-12">Core Expertise</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 border border-slate-700 rounded-2xl hover:border-blue-500 transition">
-                    <i class="fas fa-server text-4xl text-blue-400 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Backend & Database</h3>
-                    <p class="text-slate-400">ASP.NET Core, C#, Web API, Entity Framework, and MS SQL Server Optimization.</p>
-                </div>
-                <div class="p-8 border border-slate-700 rounded-2xl hover:border-emerald-500 transition">
-                    <i class="fas fa-shopping-cart text-4xl text-emerald-400 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">E-commerce Solutions</h3>
-                    <p class="text-slate-400">WooCommerce & Elementor Expert. Specialized in complex checkout flows.</p>
-                </div>
-                <div class="p-8 border border-slate-700 rounded-2xl hover:border-purple-500 transition">
-                    <i class="fas fa-language text-4xl text-purple-400 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Multilingual (WPML)</h3>
-                    <p class="text-slate-400">Expertise in Arabic/English RTL & LTR site architecture for the Dubai market.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <h1>Scalable Backends & <span>Multilingual E-commerce</span></h1>
+  <p>Full Stack Developer with 5+ years of experience building high-performance .NET applications and enterprise-level WooCommerce platforms for international markets.</p>
+  <a href="#contact" class="btn">Let’s Work Together</a>
+</section>
 
-    <footer class="py-10 text-center text-slate-500 border-t border-slate-800">
-        <p>© 2026 | Built with Passion for the Global Tech Market</p>
-    </footer>
+<!-- TECH STACK -->
+<section>
+  <h2>Tech Stack</h2>
+  <div class="tech-grid">
+    <div class="tech-card">.NET Core</div>
+    <div class="tech-card">C# & Web API</div>
+    <div class="tech-card">MS SQL Server</div>
+    <div class="tech-card">WordPress</div>
+    <div class="tech-card">WooCommerce</div>
+    <div class="tech-card">WPML (RTL/LTR)</div>
+    <div class="tech-card">SEO Strategy</div>
+    <div class="tech-card">Scenario Writing</div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Senior Full Stack Developer</h3>
+      <p>Architected scalable .NET Core applications and optimized SQL Server databases for performance and scaling.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>E-commerce Architect</h3>
+      <p>Developed high-traffic WooCommerce stores with advanced customization and conversion optimization.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Multilingual Systems Specialist</h3>
+      <p>Designed Arabic/English corporate platforms with WPML, full RTL/LTR support targeting the UAE/Dubai market.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <h2>Selected Projects</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h3>Enterprise .NET Web Application</h3>
+      <p>High-performance backend built with .NET Core & Web API, optimized SQL queries, and scalable architecture.</p>
+    </div>
+    <div class="project-card ecommerce">
+      <h3>High-Traffic WooCommerce Store</h3>
+      <p>Custom WooCommerce development with performance tuning, payment integrations, and SEO optimization.</p>
+    </div>
+    <div class="project-card">
+      <h3>Dual-Language Corporate Platform</h3>
+      <p>Arabic/English website with WPML integration, full RTL/LTR architecture, and brand-focused UX.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button class="btn">Send Message</button>
+  </div>
+  <br>
+  <p>
+    LinkedIn | GitHub
+  </p>
+</section>
+
+<footer>
+  © 2026 Full Stack Developer Portfolio — Built with precision & scalability in mind.
+</footer>
 
 </body>
 </html>
