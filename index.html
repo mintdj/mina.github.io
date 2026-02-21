@@ -335,6 +335,80 @@ footer{
   color:#94a3b8;
   font-size:14px;
 }
+
+  /* NAVIGATION */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  backdrop-filter:blur(12px);
+  background:rgba(11,17,32,0.6);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+
+/* Links Desktop */
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:500;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+/* Hamburger for mobile */
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  gap:5px;
+}
+
+.nav-toggle span{
+  display:block;
+  width:25px;
+  height:3px;
+  background:var(--text);
+  border-radius:2px;
+  transition:0.3s;
+}
+
+/* Mobile Menu */
+@media (max-width:768px){
+  .nav-links{
+    position:fixed;
+    top:70px;
+    right:-100%;
+    flex-direction:column;
+    gap:20px;
+    background:rgba(15,23,42,0.95);
+    padding:30px;
+    width:200px;
+    height:calc(100vh - 70px);
+    transition:0.3s ease;
+    backdrop-filter:blur(12px);
+    border-left:1px solid rgba(255,255,255,0.05);
+  }
+
+  .nav-links.show{
+    right:0;
+  }
+
+  .nav-toggle{
+    display:flex;
+  }
+}
   
 </style>
 </head>
@@ -342,15 +416,23 @@ footer{
 <body>
 
 <nav>
-  <div><strong>Mina Toodeji</strong></div>
-  <div>
+  <div class="nav-brand"><strong>Mina Toodeji</strong></div>
+
+  <!-- Hamburger for mobile -->
+  <div class="nav-toggle" id="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-links" id="nav-links">
     <a href="#about">About Me</a>
     <a href="#stack">Skills</a>
+    <a href="#projects">Projects</a>
     <a href="#certifications">Certifications</a>
-    <a href="#projects">Experiences</a>
     <a href="#contact">Contact</a>
   </div>
-</nav>
+</nav>  
 
 <section class="hero">
   <h1>Full-Stack Developer & <span>WebSite Designer</span></h1>
