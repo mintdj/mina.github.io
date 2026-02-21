@@ -175,6 +175,91 @@ footer{
   border-top:1px solid var(--border);
   margin-top:80px;
 }
+
+  /* ===== CONTACT FRAME ===== */
+
+.contact-frame{
+  margin-top:60px;
+  padding:2px;
+  border-radius:20px;
+  background:linear-gradient(
+    135deg,
+    rgba(59,130,246,0.6),
+    rgba(16,185,129,0.6),
+    rgba(59,130,246,0.6)
+  );
+  background-size:300% 300%;
+  animation:gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.contact-frame{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.contact-frame > *{
+  background:rgba(15,23,42,0.9);
+  border-radius:18px;
+  padding:40px;
+  backdrop-filter:blur(12px);
+  transition:.4s ease;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.contact-card{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.contact-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(59,130,246,0.25);
+}
+
+.icon{
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  font-weight:700;
+  font-size:20px;
+}
+
+.icon.email{
+  background:rgba(59,130,246,0.15);
+  color:#3b82f6;
+}
+
+.icon.linkedin{
+  background:rgba(16,185,129,0.15);
+  color:#10b981;
+}
+
+.contact-info h4{
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+.contact-info a{
+  color:#94a3b8;
+  text-decoration:none;
+  font-size:14px;
+  transition:.3s;
+}
+
+.contact-info a:hover{
+  color:white;
+}  
 </style>
 </head>
 
@@ -301,33 +386,28 @@ footer{
 <section id="contact">
   <h2>Let’s Connect</h2>
 
-  <div class="contact-wrapper">
+  <div class="contact-frame">
     
     <div class="contact-card">
-      <div class="icon">
-        <!-- Email SVG -->
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 4h16v16H4z"></path>
-          <path d="M22 6l-10 7L2 6"></path>
-        </svg>
+      <div class="icon email">
+        ✉
       </div>
       <div class="contact-info">
         <h4>Email</h4>
-        <a href="mailto:minatoodeji@gmail.com">minatoodeji@gmail.com</a>
+        <a href="mailto:minatoodeji@gmail.com">
+          minatoodeji@gmail.com
+        </a>
       </div>
     </div>
 
-    <div class="contact-card linkedin">
-      <div class="icon">
-        <!-- LinkedIn SVG -->
-        <svg width="22" height="22" fill="currentColor">
-          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v14H0zM8 8h4.8v2h.07c.67-1.27 2.3-2.6 4.73-2.6C22.42 7.4 24 9.24 24 13v9h-5v-8c0-1.9-.03-4.35-2.65-4.35-2.65 0-3.05 2.07-3.05 4.2V22H8z"/>
-        </svg>
+    <div class="contact-card">
+      <div class="icon linkedin">
+        in
       </div>
       <div class="contact-info">
         <h4>LinkedIn</h4>
         <a href="https://www.linkedin.com/in/mina-toodeji" target="_blank">
-          linkedin.com/in/mina-toodeji
+          mina-toodeji
         </a>
       </div>
     </div>
